@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gizmos | Cart</title>
+    <link rel="stylesheet" href="./cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="./logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <div id="blurBackground">
+        <div class="blurBackgroundContent">
+            <h1>Do you want to remove <br>this product?</h1>
+            <div class="blurBackgroundButtons">
+                <button id="cancelBlurBackground">Cancel</button>
+                <button id="deleteBlurBackground">Delete</button>
+            </div>
+        </div>
+    </div>
+
+
+    <button id="scrollTopBtn"><i class="fa-solid fa-angle-up"></i></button>
+
+    <header>
+        <div class="headerTop">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="./gizmos.png">
+                </a>
+            </div>
+
+            <div class="searchBar">
+                <div class="categories">
+                    <select id="categories">
+                        <option>All Categories</option>
+                        <option>IT Tech</option>
+                        <option>Laptops</option>
+                        <option>Audio</option>
+                        <option>Computer Systems</option>
+                        <option>PC</option>
+                        <option>3D Printers</option>
+                        <option>Electronics</option>
+                        <option>Gadgets</option>
+                        <option>Smartphones</option>
+                    </select>
+                </div>
+
+                <div class="search">
+                    <input type="text" id="search" placeholder="Search for Product...">
+
+                    <!-- <button> -->
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <!-- </button> -->
+                </div>
+            </div>
+
+            <div class="menuNav">
+                <ul>
+                    <li><a href="#"><i class="fa-regular fa-user"></i></a></li>
+                    <li><a href="../like/like.html"><i class="fa-regular fa-heart"></i></a></li>
+                    <li><a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><a href="#">$0</a>
+                        <h1>0</h1>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="headerBottom">
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="discount">
+                <h1>Weekly Discount</h1>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="cartProductsSection">
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footerNewsletter">
+            <h1>Sign up to Newsletter</h1>
+            <div class="footerNewsletterInput">
+                <input type="text" placeholder="Your Email Address:">
+                <button><i class="fa-regular fa-envelope"></i></button>
+            </div>
+            <div class="footerBrands">
+                <h1>Follow us on:</h1>
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-spotify"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="footerInfoContainer">
+            <div class="footerInfo">
+                <ul>
+                    <li><span>Privacy Policy</span></li>
+                    <li><span>Returns & Exchanges</span></li>
+                    <li><span>Payment Terms</span></li>
+                    <li><span>Delivery Terms</span></li>
+                    <li><span>Payment & Pricing</span></li>
+                    <li><span>Terms Of Use</span></li>
+                    <li><span>Privacy Policy</span></li>
+                </ul>
+            </div>
+            <div class="footerInfo">
+                <ul>
+                    <li><span>Get Involved</span></li>
+                    <li><span>About Us</span></li>
+                    <li><span>Our Vision</span></li>
+                    <li><span>Orders & Shipping</span></li>
+                    <li><span>Office Supplies</span></li>
+                    <li><span>Contact Us</span></li>
+                    <li><span>Customer Service</span></li>
+                </ul>
+            </div>
+            <div class="footerInfo">
+                <ul>
+                    <li><span>Quick Links</span></li>
+                    <li><span>Smartphones</span></li>
+                    <li><span>Headphones</span></li>
+                    <li><span>Laptop & Tablet</span></li>
+                    <li><span>Monitors</span></li>
+                    <li><span>Printers</span></li>
+                    <li><span>Gadgets</span></li>
+                </ul>
+            </div>
+            <div class="footerInfo">
+                <ul>
+                    <li><span>Customer Care</span></li>
+                    <li><span>My Account</span></li>
+                    <li><span>Store Locator</span></li>
+                    <li><span>Customer Service</span></li>
+                    <li><span>Returns/Exchange</span></li>
+                    <li><span>Product Support</span></li>
+                    <li><span>FAQs</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="footerContact">
+            <div class="footerContactInfo">
+                <div class="footerContactImg"><img src="./logo-footer.png"></div>
+                <div class="footerContactSale">
+                    <ul>
+                        <li><i class="fa-solid fa-headset"></i><span>+0080 1234 56 789</span></li>
+                        <li><i class="fa-solid fa-truck"></i><span>Amounts over $100</span></li>
+                        <li><i class="fa-solid fa-tags"></i><span>Save up to 20%</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="footerContactProduction">
+                <p>© 2022 Qode Interactive, All Rights Reserved</p>
+                <img src="./payments-icons-2xnew.png">
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="./cart.js"></script>
+</body>
+
+</html>
