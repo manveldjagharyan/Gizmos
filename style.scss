@@ -403,6 +403,12 @@ header {
           &:nth-child(4) {
             transform: scale(1.2) translateY(2px);
           }
+
+          &:nth-child(5) {
+            @media (max-width: 552px) {
+              display: none;
+            }
+          }
         }
 
         @media (max-width: 552px) {
@@ -551,6 +557,15 @@ header {
           align-items: center;
           cursor: pointer;
           transition: 0.4s;
+
+          &:first-child {
+            @media (max-width: 1024px) {
+              background-color: transparent;
+              color: #2453d4;
+            }
+
+            background-color: #1e39df;
+          }
 
           & > a {
             text-decoration: none;
@@ -1335,11 +1350,11 @@ main {
         }
       }
 
-      & h5{
+      & h5 {
         margin-top: 10px;
       }
 
-      & h2{
+      & h2 {
         font-size: 50px;
         font-weight: 500;
 
@@ -1722,6 +1737,45 @@ main {
     gap: 15px;
     transition: 0.3s;
 
+    @media (min-width: 1200px) and (max-width: 1400px) {
+      padding: 40px 100px;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1200px) {
+      flex-wrap: wrap;
+      padding: 40px 100px;
+    }
+
+    @media (max-width: 1024px) {
+      flex-wrap: wrap;
+      padding: 30px 0px;
+    }
+
+    @media (min-width: 769px) {
+      &:hover .bannerChild {
+        filter: blur(3px);
+
+        &:hover {
+          border-color: white;
+          filter: blur(0px);
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      padding: 30px 0px;
+
+      &:hover .bannerChild {
+        filter: blur(0px);
+
+        &:hover {
+          border-color: white;
+          filter: blur(0px);
+        }
+      }
+    }
+
     &:hover .bannerChild {
       filter: blur(3px);
 
@@ -1738,6 +1792,15 @@ main {
       height: auto;
       display: flex;
       border-radius: 15px;
+
+      @media (max-width: 768px) {
+        width: 95%;
+      }
+
+      @media (max-width: 552px) {
+        width: 95%;
+        padding: 20px;
+      }
 
       & .banerInfo {
         width: auto;
