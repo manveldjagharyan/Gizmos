@@ -578,22 +578,20 @@
 
     <div class="footerContact">
       <div class="footerContactInfo">
-        <div class="footerContactImg">
-          <img src="https://gizmos.qodeinteractive.com/wp-content/uploads/2022/11/logo-footer.png" />
-        </div>
-        <div class="footerContactSale">
-          <ul>
-            <li>
-              <i class="fa-solid fa-headset"></i><span>+0080 1234 56 789</span>
-            </li>
-            <li>
-              <i class="fa-solid fa-truck"></i><span>Amounts over $100</span>
-            </li>
-            <li>
-              <i class="fa-solid fa-tags"></i><span>Save up to 20%</span>
-            </li>
-          </ul>
-        </div>
+        <ul>
+          <li>
+            <img src="https://gizmos.qodeinteractive.com/wp-content/uploads/2022/11/logo-footer.png" />
+          </li>
+          <li>
+            <i class="fa-solid fa-headset"></i><span>+0080 1234 56 789</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-truck"></i><span>Amounts over $100</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-tags"></i><span>Save up to 20%</span>
+          </li>
+        </ul>
       </div>
 
       <hr />
@@ -639,7 +637,6 @@
   </script>
   <script>
     var swiper = new Swiper(".mySwiper3", {
-      slidesPerView: 3,
       spaceBetween: 30,
       autoplay: true,
       loop: true,
@@ -647,7 +644,22 @@
         el: ".swiper-pagination",
         clickable: true,
       },
+      breakpoints: {
+
+        0: {
+          slidesPerView: 1,
+        },
+
+        768: {
+          slidesPerView: 2,
+        },
+
+        1024: {
+          slidesPerView: 3,
+        },
+      }
     });
+
   </script>
 </body>
 
