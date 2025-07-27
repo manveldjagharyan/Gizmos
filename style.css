@@ -18,25 +18,41 @@
   position: fixed;
   bottom: 70px;
   right: 50px;
-  background: #4069ff;
   color: white;
   border: none;
-  padding: 10px 13px;
-  border-radius: 5px;
+  padding: 15px 18px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 15px;
   opacity: 0;
-  transform: translateY(10px);
-  transition: 0.4s;
-  display: none;
+  transform: translateY(-10px);
+  transition: 0.2s;
   /* Սկզբում թաքցրած */
   z-index: 100000000000000000000000000000000000000000000000000000000;
+  scale: 1;
+  filter: blur(0);
+  background: linear-gradient(0deg, rgba(28, 0, 138, 0.719) 0%, rgba(33, 40, 255, 0.727) 100%);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  box-shadow: inset 0 0 10px white, 0 0 20px rgba(98, 0, 255, 0.612);
+}
+@media (max-width: 552px) {
+  #scrollTopBtn {
+    bottom: 40px;
+    right: 30px;
+    padding: 12px 15px;
+  }
 }
 
 #scrollTopBtn.show {
   display: block;
   opacity: 1;
   transform: translateY(0);
+}
+
+#scrollTopBtn:active {
+  filter: blur(2px);
+  scale: 1.1;
 }
 
 #scrollTopBtn:hover {
@@ -84,7 +100,12 @@
   position: relative;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
+  overflow-x: hidden;
   background-color: white;
 }
 
@@ -523,15 +544,16 @@ header > .headerBottom > nav {
     position: absolute;
     top: 100%;
     overflow: hidden;
-    height: 0;
+    height: 200px;
     transition: 0.4s;
     padding: 0 60px;
     background-color: white;
+    transform: translateX(100%);
   }
   header > .headerBottom > nav.active {
-    height: 200px;
     transition: 0.4s;
     position: absolute;
+    transform: translateX(0%);
     top: 100%;
     overflow: hidden;
     background-color: #ffffff;
@@ -1893,6 +1915,16 @@ main .topCategories {
   flex-direction: column;
   transition: 0.3s;
 }
+@media (min-width: 1024px) and (max-width: 1400px) {
+  main .topCategories {
+    padding: 40px 100px;
+  }
+}
+@media (max-width: 1024px) {
+  main .topCategories {
+    padding: 0 30px;
+  }
+}
 main .topCategories .topCategoriesName {
   font-size: 30px;
 }
@@ -1901,6 +1933,7 @@ main .topCategories .topCategoriesAll {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 main .topCategories .topCategoriesAll .topCategoriesChild {
   width: auto;
@@ -1908,11 +1941,27 @@ main .topCategories .topCategoriesAll .topCategoriesChild {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 1024px) and (max-width: 1200px) {
+  main .topCategories .topCategoriesAll .topCategoriesChild {
+    width: 25%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  main .topCategories .topCategoriesAll .topCategoriesChild {
+    width: 45%;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 552px) {
+  main .topCategories .topCategoriesAll .topCategoriesChild {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
 main .topCategories .topCategoriesAll .topCategoriesChild .topCategoriesChildTop {
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 10px;
 }
@@ -1932,12 +1981,24 @@ main .topCategories .topCategoriesAll .topCategoriesChild .topCategoriesChildTop
   background-repeat: no-repeat;
   background-position: center;
 }
+@media (min-width: 1400px) and (max-width: 1600px) {
+  main .topCategories .topCategoriesAll .topCategoriesChild .topCategoriesChildTop .topCategoriesChildImg {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1400px) {
+  main .topCategories .topCategoriesAll .topCategoriesChild .topCategoriesChildTop .topCategoriesChildImg {
+    width: 60px;
+    height: 60px;
+  }
+}
 main .topCategories .topCategoriesAll .topCategoriesChild .topCategoriesChildTop .topCategoriesChildName {
   width: auto;
   height: auto;
 }
 main .topCategories .topCategoriesAll .topCategoriesChild .topCategoriesChildTop .topCategoriesChildName h1 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
 }
 main .topCategories .topCategoriesAll .topCategoriesChild ul {
@@ -1972,6 +2033,11 @@ main .topCategories .topCategoriesAll .topCategoriesChild ul li:last-child a i {
 main .topCategories .topCategoriesAll .topCategoriesChild ul li:last-child a i:hover {
   transform: translateX(10px);
 }
+@media (max-width: 1024px) {
+  main .topCategories .topCategoriesAll .topCategoriesChild ul {
+    margin-left: 80px;
+  }
+}
 main .brands {
   width: 100%;
   height: auto;
@@ -1990,12 +2056,49 @@ main .brands ul {
   background-color: #f3f6fb;
   padding: 20px;
   border-radius: 10px;
+  flex-wrap: wrap;
+}
+@media (min-width: 552px) and (max-width: 1024px) {
+  main .brands ul {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 552px) {
+  main .brands ul {
+    justify-content: center;
+    align-items: center;
+  }
 }
 main .brands ul li {
   width: 60px;
 }
+@media (min-width: 552px) and (max-width: 1024px) {
+  main .brands ul li {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 552px) {
+  main .brands ul li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
 main .brands ul li a {
   width: 100%;
+}
+@media (min-width: 552px) and (max-width: 1024px) {
+  main .brands ul li a {
+    width: 60px;
+  }
+}
+@media (max-width: 552px) {
+  main .brands ul li a {
+    display: flex;
+    justify-content: center;
+  }
 }
 main .brands ul li a img {
   width: 100%;
@@ -2007,20 +2110,78 @@ main .brands ul li a img {
   opacity: 1;
   transition: 0.4s;
 }
+@media (min-width: 552px) and (max-width: 1024px) {
+  main .brands ul li a img {
+    width: 60px;
+  }
+}
+@media (max-width: 552px) {
+  main .brands ul li a img {
+    width: 60px;
+  }
+}
 main .brands ul li:nth-child(3) {
   width: 80px;
+}
+@media (min-width: 552px) and (max-width: 1024px) {
+  main .brands ul li:nth-child(3) {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 552px) {
+  main .brands ul li:nth-child(3) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
 main .brands ul li:nth-child(5) {
   width: 120px;
 }
+@media (min-width: 552px) and (max-width: 1024px) {
+  main .brands ul li:nth-child(5) {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 552px) {
+  main .brands ul li:nth-child(5) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
 main .brands ul li:hover img {
   opacity: 0.5;
+}
+@media (min-width: 1024px) and (max-width: 1400px) {
+  main .brands {
+    padding: 40px 100px;
+  }
+}
+@media (max-width: 1024px) {
+  main .brands {
+    padding: 0 30px;
+  }
 }
 main .latestBlogs {
   width: 100%;
   height: auto;
   padding: 50px 240px;
   transition: 0.3s;
+}
+@media (min-width: 1024px) and (max-width: 1400px) {
+  main .latestBlogs {
+    padding: 40px 100px;
+  }
+}
+@media (max-width: 1024px) {
+  main .latestBlogs {
+    padding: 20px 30px;
+  }
 }
 main .latestBlogs h1 {
   font-size: 30px;
@@ -2096,6 +2257,16 @@ footer {
   padding: 50px 190px;
   color: white;
 }
+@media (min-width: 1024px) and (max-width: 1400px) {
+  footer {
+    padding: 40px 100px;
+  }
+}
+@media (max-width: 1024px) {
+  footer {
+    padding: 60px 30px 20px 30px;
+  }
+}
 footer hr {
   border: 1px solid rgba(101, 101, 101, 0.299);
 }
@@ -2106,17 +2277,28 @@ footer .footerNewsletter {
   justify-content: space-between;
   margin-bottom: 40px;
 }
+@media (max-width: 1200px) {
+  footer .footerNewsletter {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
 footer .footerNewsletter h1 {
   margin: auto 0;
 }
+@media (min-width: 1024px) and (max-width: 1400px) {
+  footer .footerNewsletter h1 {
+    font-size: 27px;
+  }
+}
 footer .footerNewsletter .footerNewsletterInput {
-  width: 560;
+  width: auto;
   height: 60px;
   border: 1px solid rgb(89, 89, 89);
   background-color: transparent;
   border-radius: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   transition: 0.4s;
 }
@@ -2129,6 +2311,16 @@ footer .footerNewsletter .footerNewsletterInput input {
   transition: 0.4s;
   color: rgb(255, 255, 255);
   font-size: 17px;
+}
+@media (max-width: 1200px) {
+  footer .footerNewsletter .footerNewsletterInput input {
+    width: 90%;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1400px) {
+  footer .footerNewsletter .footerNewsletterInput input {
+    width: 400px;
+  }
 }
 footer .footerNewsletter .footerNewsletterInput input::-moz-placeholder {
   color: rgb(182, 182, 182);
@@ -2202,6 +2394,18 @@ footer .footerInfoContainer {
   justify-content: space-between;
   align-items: center;
   margin: 40px 0;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  footer .footerInfoContainer .footerInfo {
+    width: 45%;
+  }
+}
+@media (max-width: 380px) {
+  footer .footerInfoContainer .footerInfo {
+    width: 100%;
+  }
 }
 footer .footerInfoContainer .footerInfo ul {
   list-style: none;
@@ -2232,15 +2436,63 @@ footer .footerContact .footerContactInfo {
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
   margin: 20px 0;
+  flex-wrap: wrap;
+  position: relative;
 }
-footer .footerContact .footerContactInfo .footerContactImg {
+@media (max-width: 768px) {
+  footer .footerContact .footerContactInfo {
+    justify-content: start;
+  }
+}
+footer .footerContact .footerContactInfo ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  footer .footerContact .footerContactInfo ul {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: start;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  footer .footerContact .footerContactInfo ul li {
+    width: 45%;
+  }
+}
+@media (max-width: 768px) {
+  footer .footerContact .footerContactInfo ul li {
+    width: 100%;
+  }
+}
+footer .footerContact .footerContactInfo ul li:first-child {
+  position: absolute;
+  left: 0%;
   width: 100px;
   height: 25px;
 }
-footer .footerContact .footerContactInfo .footerContactImg img {
+@media (min-width: 768px) and (max-width: 1024px) {
+  footer .footerContact .footerContactInfo ul li:first-child {
+    position: relative;
+    width: 45%;
+    transform: translateX(-40%);
+  }
+}
+@media (max-width: 768px) {
+  footer .footerContact .footerContactInfo ul li:first-child {
+    position: relative;
+    width: auto;
+    transform: translateX(-50%);
+    scale: 1.5;
+  }
+}
+footer .footerContact .footerContactInfo ul li:first-child img {
   background-position: center;
   background-repeat: no-repeat;
   -o-object-fit: cover;
@@ -2248,23 +2500,28 @@ footer .footerContact .footerContactInfo .footerContactImg img {
   width: 100%;
   height: 100%;
 }
-footer .footerContact .footerContactInfo .footerContactSale {
-  width: auto;
-  height: auto;
+@media (min-width: 768px) and (max-width: 1024px) {
+  footer .footerContact .footerContactInfo ul li:first-child img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
 }
-footer .footerContact .footerContactInfo .footerContactSale ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-}
-footer .footerContact .footerContactInfo .footerContactSale ul li i {
+footer .footerContact .footerContactInfo ul li i {
   font-size: 22px;
   margin-right: 10px;
 }
-footer .footerContact .footerContactInfo .footerContactSale ul li span {
+@media (min-width: 768px) and (max-width: 1200px) {
+  footer .footerContact .footerContactInfo ul li i {
+    font-size: 18px;
+  }
+}
+footer .footerContact .footerContactInfo ul li span {
   font-size: 22px;
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  footer .footerContact .footerContactInfo ul li span {
+    font-size: 20px;
+  }
 }
 footer .footerContact .footerContactProduction {
   margin-top: 20px;
@@ -2273,6 +2530,12 @@ footer .footerContact .footerContactProduction {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 768px) {
+  footer .footerContact .footerContactProduction {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 footer .footerContact .footerContactProduction p {
   color: #676767;
