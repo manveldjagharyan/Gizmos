@@ -1,34 +1,36 @@
 function newMessage(description) {
-    let closeMessage = document.createElement('div');
-    closeMessage.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-    closeMessage.classList.add('close-btn');
+    if (window.innerWidth > 768) {
+        let closeMessage = document.createElement('div');
+        closeMessage.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        closeMessage.classList.add('close-btn');
 
-    let message = document.createElement('div');
-    message.classList.add('message');
+        let message = document.createElement('div');
+        message.classList.add('message');
 
-    let text = document.createElement('span');
-    text.innerHTML = description;
+        let text = document.createElement('span');
+        text.innerHTML = description;
 
-    let link = document.createElement('a');
-    link.textContent = 'View More';
-    link.href = './like/like.html';
-    link.classList.add('messageLink');
+        let link = document.createElement('a');
+        link.textContent = 'View More';
+        link.href = './like/like.html';
+        link.classList.add('messageLink');
 
-    message.append(closeMessage, text, link);
-    document.body.append(message);
+        message.append(closeMessage, text, link);
+        document.body.append(message);
 
-    message.style.display = 'flex';
-    message.style.animation = 'messageOn 0.5s ease forwards';
+        message.style.display = 'flex';
+        message.style.animation = 'messageOn 0.5s ease forwards';
 
-    setTimeout(() => {
-        message.style.animation = 'messageOff 0.5s ease forwards';
-        setTimeout(() => message.remove(), 500);
-    }, 2000);
+        setTimeout(() => {
+            message.style.animation = 'messageOff 0.5s ease forwards';
+            setTimeout(() => message.remove(), 500);
+        }, 2000);
 
-    closeMessage.onclick = () => {
-        message.style.animation = 'messageOff 0.5s ease forwards';
-        setTimeout(() => message.remove(), 500);
-    };
+        closeMessage.onclick = () => {
+            message.style.animation = 'messageOff 0.5s ease forwards';
+            setTimeout(() => message.remove(), 500);
+        };
+    }
 }
 
 
@@ -167,7 +169,7 @@ FeaturedProducts.map((product) => {
             <div class="swiper-wrapper"></div>
         </div>
         <div class="productBottom">
-                        <h1>${product.name.length > 30 ? product.name.substring(0, 30) + '...' : product.name}</h1>
+            <h1>${product.name.length > 30 ? product.name.substring(0, 30) + '...' : product.name}</h1>
             <div class="productPrice">
                 <h2>${product.price}</h2>
                 <span>${product.oldPrice ? product.oldPrice : ''}</span>
